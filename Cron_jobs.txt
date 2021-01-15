@@ -1,0 +1,16 @@
+#TO ENABLE THE CRON_JOBS ENTER crontab COMMAND THE -l MEANS LIST AND -u MEANS THE USERNAME
+crontab -l -u root
+
+#AFTER YOU PRESS ENTER AN EDITOR WILL POP OUT
+#MINUTE HOUR DAY MONTH DAY
+#  m     h   dom  mon  dow     command
+  45    23    *    *    *      python /home/alucard/SCRIPTS/get_running-config.py
+
+#TO SAVE PRESS "ctrl + X" THEN "Y" AND "ENTER" AT THE END
+
+#THE PREVIOUS COMMAND CALL A PYTHON SCRIPT THAT GET AND SAVE THE CONFIGURATION OF A DETERMINATE 
+#CISCO SWITCH OR ROUTER. FOR MORE INFORMATION GO TO 
+#https://github.com/JJameson-Neunzig/Python-Scripts/blob/main/get_running-config.py
+
+#FOR HELP ABOUT HOW TO SETUP THE SCHEDULED TASKS, PLEASE VISIT:
+#https://crontab.guru/#*_*_*_*_*
