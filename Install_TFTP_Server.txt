@@ -1,0 +1,29 @@
+#UPDATE YOUR LIBRARY
+apt-get update
+
+#TFTP SERVER INSTALL
+apt-cache search tftpd
+apt-get install tftpd-hpa -y
+
+#CHECK STATUS OF THE TFTP SERVICE
+service tftpd-hpa status
+
+#IF THE TFTP SERVICE IS RUNNING SKIP THIS COMMAND
+service tftpd-hpa restart
+
+#CONFIGURE TFTP
+nano /etc/default/tftpd-hpa
+#CHANGE THE LINES THAT READS: 
+#TFTP_OPTIONS="--secure"
+#to 
+#TFTP_OPTIONS="--secure --create"
+
+#GIVE PERMISSIONS ON TFTP ROOT DIRECTORY
+chown -R tftp /var/lib/tftpboot
+
+#RESTART TFTP SERVICE
+service tftpd-hpa restart
+
+#TO CHECK THE FILES UPDATED
+ls -ltr /var/lib/tftpboot
+
