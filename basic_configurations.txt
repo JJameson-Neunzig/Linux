@@ -1,0 +1,13 @@
+#CONFIGURE AN IP ADDRESS
+ifconfig enp0s3 10.5.15.10 netmask 255.255.255.0 up
+
+#CONFIGURE DEFAULT GATEWAY
+route add default gw 10.5.15.1
+
+#IF WE HAVE PROBLEMS WITH THE RESOLUTION DOMAIN NAMES
+#EDIT THE FILE resolv.conf
+nano /etc/resolv.conf
+#CHANGE nameserver 127.0.0.53 FOR nameserver 8.8.8.8
+
+#SHOW YOU IP CONFIGURATION
+ifconfig
